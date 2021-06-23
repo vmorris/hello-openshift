@@ -2,15 +2,15 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app:
-  name:
+    app: helloworld
+  name: helloworld-route
 spec:
   port:
-    targetPort: web
+    targetPort: web-svc
   to:
-    kind: 
-    name:
+    kind: Service
+    name: helloworld-svc
     weight: 100
   tls:
-    termination:
+    termination: edge
   wildcardPolicy: None
